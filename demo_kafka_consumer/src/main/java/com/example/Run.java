@@ -12,8 +12,9 @@ public class Run {
 
         String brokers = "192.168.188.156:32400, 192.168.188.156:32401, 192.168.188.156:32402";
         String topicName = "spring_demo";
-        String groupId = "spring_group";
+        String groupId = "spring_group1";
 
         Consumer.consume(brokers, groupId, topicName);
+
     }
 }

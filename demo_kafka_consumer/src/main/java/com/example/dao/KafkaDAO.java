@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 @Entity
 @Getter
 @Setter
-@Table(name="kafka_log")
+@Table(name="kafka_log2")
 public class KafkaDAO {
     @Id
     @Column(name="log_sequence", nullable=false)
