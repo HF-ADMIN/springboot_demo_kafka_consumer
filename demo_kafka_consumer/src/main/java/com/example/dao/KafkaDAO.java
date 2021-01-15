@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 @Entity
 @Getter
 @Setter
-@Table(name="kafka_log2")
+@Table(name="kafka_log")
 public class KafkaDAO {
     @Id
     @Column(name="log_sequence", nullable=false)
@@ -24,8 +24,11 @@ public class KafkaDAO {
     @Column(name="timestamp", nullable=false)
     private String timestamp;
 
-    @Column(name="code", nullable=false)
-    private String code;
+    @Column(name="service", nullable=false)
+    private String service;
+
+    @Column(name="method", nullable=true)
+    private String method;
 
     @Column(name="guid", nullable=false)
     private String guid;

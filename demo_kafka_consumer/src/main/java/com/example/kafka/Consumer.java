@@ -149,9 +149,10 @@ public class Consumer {
                     }
 
                     kafkaDAO.setTimestamp(strSplit[0]);
-                    kafkaDAO.setCode(strSplit[1]);
-                    kafkaDAO.setGuid(strSplit[2]);
-                    kafkaDAO.setMsg(strSplit[3]);
+                    kafkaDAO.setService(strSplit[1]);
+                    kafkaDAO.setMethod(strSplit[2]);
+                    kafkaDAO.setGuid(strSplit[3]);
+                    kafkaDAO.setMsg(strSplit[4]);
 
                     list.add(kafkaDAO);
 //                    Repository.insert(kafkaDAO);
