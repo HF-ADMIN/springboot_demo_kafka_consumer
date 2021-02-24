@@ -1,4 +1,4 @@
 com\example\repository\KafKaRepository.class
+com\example\Run.class
 com\example\dao\KafkaDAO.class
 com\example\kafka\Consumer.class
-com\example\Run.class
