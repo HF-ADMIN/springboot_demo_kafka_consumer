@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-kafka-consumer-service
+  namespace: demo-tinfo
+  labels:
+    app: springboot-kafka-consumer
+spec:
+  type: NodePort
+  ports:
+  - port: 8084
+    targetPort: 8084
+    nodePort: 30698
+    protocol: TCP
+    name: http
+  selector:
+    app: springboot-kafka-consumer

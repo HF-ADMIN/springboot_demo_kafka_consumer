@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-kafka-consumer-deployment
+  namespace: demo-tinfo
+  labels:
+    app: springboot-kafka-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-kafka-consumer
+  template:
+    metadata:
+      labels:
+        app: springboot-kafka-consumer
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: k8s-worker1
+      volumes:
+        - name: tz-seoul
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Seoul
+      containers:
+      - name: springboot-kafka-consumer-container
+        image: soondo21/springboot-demo-kafka-consumer:latest
+        ports:
+        - containerPort: 8084
+        volumeMounts:
+          - name: tz-seoul
+            mountPath: /etc/localtime
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m
